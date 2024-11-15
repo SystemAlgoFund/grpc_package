@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "/proto";
+
+service Service {
+  rpc Send (Request) returns (Response);
+}
+
+message Request {
+  string route = 1;
+  bytes message = 2;
+}
+
+message Response {
+  string route = 1;
+  bytes response = 2;
+}
